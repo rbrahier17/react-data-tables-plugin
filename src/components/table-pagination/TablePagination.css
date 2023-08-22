@@ -1,0 +1,7 @@
+.TablePagination_button {
+  cursor: pointer;
+}
+
+.TablePagination_button.active {
+  background-color: #0bd0ed;
+}

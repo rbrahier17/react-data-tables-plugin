@@ -1,0 +1,54 @@
+.TableHeader th {
+  height: 40px;
+  background: #36304a;
+  padding: 10px 18px;
+}
+
+.TableHeader th button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 100;
+  padding: 0;
+}
+
+.TableHeader th button .arrow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.TableHeader th button .arrow-container .arrow-up,
+.TableHeader th button .arrow-container .arrow-down {
+  border-width: 0.36rem;
+  border-style: solid;
+  border-color: transparent transparent #f5f5f5;
+}
+
+.TableHeader th button .arrow-container .arrow-down {
+  border-color: #f5f5f5 transparent transparent;
+}
+
+.TableHeader th button .arrow-container .active.arrow-up {
+  border-color: transparent transparent #0bd0ed;
+}
+
+.TableHeader th button .arrow-container .active.arrow-down {
+  border-color: #0bd0ed transparent transparent;
+}
+
+.TableHeader th button.asc .arrow-container .arrow-down {
+  border-color: lightgray transparent transparent;
+}
+
+.TableHeader th button.desc .arrow-up {
+  border-color: transparent transparent lightgray;
+}

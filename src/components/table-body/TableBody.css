@@ -1,0 +1,16 @@
+.TableBody tr {
+  height: 50px;
+}
+
+.TableBody tr td {
+  padding: 10px 18px;
+}
+
+.TableBody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.TableBody .no-data {
+  text-align: center;
+   background-color: #f5f5f5;
+}

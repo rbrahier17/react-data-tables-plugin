@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import DataTable from './DataTable';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { columnsExample, dataExample } from "./data";
+
+test('No test yet', () => {
+  render(<DataTable columns={columnsExample} data={dataExample}/>);
 });
