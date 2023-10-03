@@ -1,15 +1,11 @@
 import "./TableEntriesSelector.css";
+import { ITableEntriesSelectorProps } from "../../types/data-table";
 
-interface TableEntriesSelectorProps {
-  numberOfEntries: number;
-  onEntriesChange: (numberOfEntries: number) => void;
-}
-
-export default function TableEntriesSelector({ numberOfEntries, onEntriesChange }: TableEntriesSelectorProps) {
-  const options = [2, 4, 5, 10, 25, 50, 100];
+export default function TableEntriesSelector({ numberOfEntries, onEntriesChange }: ITableEntriesSelectorProps) {
+  const options = [5, 10, 15, 20, 25, 50, 100];
 
   return (
-    <div className='TableEntriesSelector'>
+    <div id='TableEntriesSelector' data-testid='table-entries-selector'>
       <label htmlFor='entries'>Show</label>
       <select
         id='entries'

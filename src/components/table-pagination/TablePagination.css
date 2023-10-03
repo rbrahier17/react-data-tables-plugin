@@ -1,7 +1,24 @@
-.TablePagination_button {
-  cursor: pointer;
+#TablePagination {
+  display: flex;
+  gap: 4px;
 }
 
-.TablePagination_button.active {
-  background-color: #0bd0ed;
+#TablePagination button:first-child {
+  margin-right: 5px;
+}
+
+#TablePagination button:last-child {
+  margin-left: 5px;
+}
+
+#TablePagination button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 1px 10px;
+  font-weight: 500;
+}
+
+#TablePagination button.active {
+  background-color: var(--accent-color);
 }

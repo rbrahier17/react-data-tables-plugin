@@ -1,4 +1,10 @@
-.TableEntriesSelector {
+#TableEntriesSelector {
   display: flex;
   gap: 5px;
+}
+
+#TableEntriesSelector select {
+  border: none;
+  border-radius: 10px;
+  padding: 1px 5px;
 }

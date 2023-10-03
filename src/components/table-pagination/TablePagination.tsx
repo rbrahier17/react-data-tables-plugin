@@ -1,11 +1,5 @@
 import "./TablePagination.css";
-
-interface ITablePaginationProps {
-  currentPage: number;
-  numberOfEntries: number;
-  dataStateLength: number;
-  onPageChanges: (newPage: number) => void;
-}
+import { ITablePaginationProps } from "../../types/data-table";
 
 export default function TablePagination({
   currentPage,
@@ -77,7 +71,7 @@ export default function TablePagination({
   };
 
   return (
-    <div className='TablePagination'>
+    <div id='TablePagination' data-testid='table-pagination'>
       {/* Previous button */}
       <button
         className='TablePagination_button'
@@ -91,7 +85,7 @@ export default function TablePagination({
       {getPagination().map((page, index) => (
         <button
           key={index}
-          className={`TablePagination_button ${currentPage === page ? "active" : ""}`}
+          className={`${currentPage === page ? "active" : ""}`}
           onClick={() => (page !== -1 ? handlePageChange(page) : null)}
         >
           {page === -1 ? "..." : page}

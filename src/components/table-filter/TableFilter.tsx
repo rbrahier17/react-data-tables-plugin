@@ -1,12 +1,7 @@
 import "./TableFilter.css";
-import { IRow } from "../../types/data-table";
+import { ITableFilterProps } from "../../types/data-table";
 
-interface TableFilterProps {
-  data: IRow[];
-  onSearchInput: (dataState: IRow[]) => void;
-}
-
-export default function TableFilter({ data, onSearchInput }: TableFilterProps) {
+export default function TableFilter({ data, onSearchInput }: ITableFilterProps) {
   function onInputChange(inputValue: string) {
     const filteredRows = data.filter((row) => {
       const rowValues = Object.values(row).join(" ").toLowerCase();
@@ -17,9 +12,15 @@ export default function TableFilter({ data, onSearchInput }: TableFilterProps) {
   }
 
   return (
-    <div className='TableFilter'>
+    <div id='TableFilter' data-testid='table-filter'>
       <label htmlFor='search'>Search:</label>
-      <input type='text' id='search' name='search' onChange={(event) => onInputChange(event.target.value)} />
+      <input
+        type='text'
+        id='search'
+        name='search'
+        onChange={(event) => onInputChange(event.target.value)}
+        data-testid='table-filter-input'
+      />
     </div>
   );
 }

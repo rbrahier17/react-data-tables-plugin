@@ -2,7 +2,7 @@ import { IRow, ISorting } from "../types/data-table";
 
 export function sortData(data: IRow[], sorting: ISorting): IRow[] {
   const { column, order } = sorting;
-
+  
   return [...data].sort((a, b) => {
     const valueA = a[column];
     const valueB = b[column];

@@ -1,11 +1,4 @@
-import "./TableInfo.css";
-
-interface ITableInfoProps {
-  dataLength: number;
-  displayedDataStart: number;
-  displayedDataEnd: number;
-  dataStateLength: number;
-}
+import { ITableInfoProps } from "../../types/data-table";
 
 export default function TableInfo({
   dataLength,
@@ -25,12 +18,12 @@ export default function TableInfo({
   };
 
   const getFilteredEntriesText = () => {
-    return dataLength === dataStateLength ? "" : `(filtered from ${dataLength} total entries)`;
+    return dataLength === dataStateLength ? "" : ` (filtered from ${dataLength} total entries)`;
   };
 
   return (
-    <p>
-      {getEntriesRangeText()} {getFilteredEntriesText()}
+    <p data-testid='table-info'>
+      {getEntriesRangeText()}{getFilteredEntriesText()}
     </p>
   );
 }

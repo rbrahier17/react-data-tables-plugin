@@ -1,4 +1,10 @@
-.TableFilter {
+#TableFilter {
   display: flex;
   gap: 7px;
+}
+
+#TableFilter input {
+  border: none;
+  border-radius: 10px;
+   padding: 1px 10px;
 }
