@@ -1,13 +1,32 @@
-import "./TablePagination.css";
-import { ITablePaginationProps } from "../../types/data-table";
+/**
+ * TablePagination.tsx
+ */
 
+// Import styles
+import "./TablePagination.css";
+
+// Import interfaces
+import { ITablePaginationProps } from "../../interfaces/data-table-interfaces";
+
+/**
+ * Component for rendering pagination controls for navigating through table pages.
+ *
+ * @param currentPage - The current page number.
+ * @param numberOfEntries - The number of entries displayed per page.
+ * @param dataStateLength - The total number of entries after optional filtering.
+ * @param onPageChanges - A callback function to handle page changes.
+ * @returns The TablePagination component.
+ */
 export default function TablePagination({
   currentPage,
   numberOfEntries,
   dataStateLength,
   onPageChanges,
 }: ITablePaginationProps) {
+  // Calculate the total number of pages based on the number of entries and data length
   const totalPages: number = Math.ceil(dataStateLength / numberOfEntries);
+
+  // Determine if it's possible to navigate to the previous and next pages
   const canNavigatePrevious: boolean = currentPage > 1;
   const canNavigateNext: boolean = currentPage < totalPages;
 
@@ -64,6 +83,7 @@ export default function TablePagination({
     }
   }
 
+  // Handle page change when a button is clicked
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       onPageChanges(page);

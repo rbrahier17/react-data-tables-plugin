@@ -1,6 +1,20 @@
-import "./TableEntriesSelector.css";
-import { ITableEntriesSelectorProps } from "../../types/data-table";
+/**
+ * TableEntriesSelector.tsx
+ */
 
+// Import styles
+import "./TableEntriesSelector.css";
+
+// Import interfaces
+import { ITableEntriesSelectorProps } from "../../interfaces/data-table-interfaces";
+
+/**
+ * Component for rendering a dropdown to select the number of entries to display per page in the table.
+ *
+ * @param numberOfEntries - The number of entries to be displayed per page.
+ * @param onEntriesChange - A callback function to handle changes in the number of entries.
+ * @returns The TableEntriesSelector component.
+ */
 export default function TableEntriesSelector({ numberOfEntries, onEntriesChange }: ITableEntriesSelectorProps) {
   const options = [5, 10, 15, 20, 25, 50, 100];
 
@@ -13,7 +27,7 @@ export default function TableEntriesSelector({ numberOfEntries, onEntriesChange 
         onChange={(event) => onEntriesChange(parseInt(event.target.value, 10))}
       >
         {options.map((option) => (
-          <option key={option} value={option}>
+          <option key={"option-key-" + option} value={option}>
             {option}
           </option>
         ))}

@@ -1,12 +1,19 @@
 /**
- * DataTable root component
+ * DataTable.tsx
  */
 
+// Import styles
 import "./DataTable.css";
+
+// Import interfaces
+import { IRow, ISorting, IDataTableProps } from "../interfaces/data-table-interfaces";
+
+// Import hooks and utils
 import { useState, useMemo } from "react";
-import { IRow, ISorting, IDataTableProps } from "../types/data-table";
 import { setCustomColorProperty } from "../utils/setCustomColorProperty";
 import { sortData } from "../utils/dataSorting";
+
+// Import components
 import TableHeader from "../components/table-header/TableHeader";
 import TableBody from "../components/table-body/TableBody";
 import TableEntriesSelector from "../components/table-entries-selector/TableEntriesSelector";
@@ -18,14 +25,13 @@ import TablePagination from "../components/table-pagination/TablePagination";
 const DEFAULT_MAIN_COLOR = "#081f37";
 const DEFAULT_ACCENT_COLOR = "#5fc9f3";
 
-
 /**
  * DataTable root component.
  *
  * This component serves as the central controller for the DataTable, managing its core functionality.
  * It controls and manipulates various states such as data, sorting, pagination, and custom colors.
  *
- * @param props - Component props.
+ * @param props - Data Table Props
  * @param props.data - The table data to display.
  * @param props.columns - The configuration of table columns.
  * @param props.mainColor - The main color for custom styling (optional).
@@ -34,7 +40,7 @@ const DEFAULT_ACCENT_COLOR = "#5fc9f3";
  */
 export const DataTable = ({ data = [], columns, mainColor, accentColor }: IDataTableProps) => {
   // This state contains the table data and can be manipulated (sorted, filtered, etc.).
-  // With this state the original data integrity is preserved.
+  // This state allow the original data integrity to be preserved.
   const [dataState, setDataState] = useState(data);
   // This state is used to perform sorting (ascending or descending) of table entries.
   const [sorting, setSorting] = useState<ISorting>({

@@ -1,3 +1,5 @@
+/* TableEntriesSelector.css */
+
 #TableEntriesSelector {
   display: flex;
   gap: 5px;
@@ -7,4 +9,5 @@
   border: none;
   border-radius: 10px;
   padding: 1px 5px;
+  font-size: 0.75rem;
 }

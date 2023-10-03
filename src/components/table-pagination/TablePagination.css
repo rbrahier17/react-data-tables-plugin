@@ -1,3 +1,5 @@
+/* TablePagination.css */
+
 #TablePagination {
   display: flex;
   gap: 4px;
@@ -17,6 +19,7 @@
   border-radius: 10px;
   padding: 1px 10px;
   font-weight: 500;
+  font-size: 0.75rem;
 }
 
 #TablePagination button.active {

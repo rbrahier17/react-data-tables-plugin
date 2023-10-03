@@ -1,6 +1,21 @@
-import "./TableBody.css";
-import { ITableBodyProps } from "../../types/data-table";
+/**
+ * TableBody.tsx
+ */
 
+// Import styles
+import "./TableBody.css";
+
+// Import interfaces
+import { ITableBodyProps } from "../../interfaces/data-table-interfaces";
+
+/**
+ * Component for rendering the body of the data table.
+ * If there is no data to display a message "No data available" is displayed instead.
+ *
+ * @param columns - The configuration of table columns.
+ * @param displayedData - The data to be displayed in the table body.
+ * @returns The TableBody component.
+ */
 export default function TableBody({ columns, displayedData }: ITableBodyProps) {
   return (
     <tbody id='TableBody' data-testid='table-body'>
@@ -12,9 +27,9 @@ export default function TableBody({ columns, displayedData }: ITableBodyProps) {
         </tr>
       ) : (
         displayedData.map((row, rowIndex) => (
-          <tr key={rowIndex}>
+          <tr key={"TR-" + rowIndex}>
             {columns.map((column, columnIndex) => (
-              <td key={columnIndex} data-testid={`data-cell-for-column-${column.data}`}>
+              <td key={"TD-col" + columnIndex + "-row" + rowIndex} data-testid={`data-cell-for-column-${column.data}`}>
                 <div>{row[column.data]}</div>
               </td>
             ))}

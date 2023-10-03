@@ -1,15 +1,15 @@
+/* DataTable.css */
+
 .DataTable_global_wrapper {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   display: table;
   margin: 0 auto;
   margin-top: 5%;
   table-layout: fixed;
   width: 100%;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .DataTable_small_screen_unsupported {
@@ -52,6 +52,27 @@
   overflow-x: auto;
 }
 
+
+/* Table scroll bar styles */
+.DataTable * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color);
+}
+
+.DataTable *::-webkit-scrollbar {
+  width: 3px;
+}
+
+.DataTable *::-webkit-scrollbar-track {
+  background: var(--main-color);
+}
+
+.DataTable *::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 0;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .DataTable,
   .DataTable_top,

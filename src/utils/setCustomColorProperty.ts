@@ -1,10 +1,12 @@
 /**
+ * setCustomColorProperty.ts
+ *
  * Sets a custom color property on the document's root element for use as a CSS variable.
  * Validates the hexadecimal format; if it's not valid, it logs an error and sets the default color as a fallback.
  *
- * @param {string} variableName - The name of the custom CSS variable to set.
- * @param {string} color - The color value to set for the CSS variable.
- * @param {string} defaultColor - The default color value to use if the provided color is invalid.
+ * @param variableName - The name of the custom CSS variable to set.
+ * @param color - The color value to set for the CSS variable.
+ * @param defaultColor - The default color value to use if the provided color is invalid.
  */
 export function setCustomColorProperty(variableName: string, color: string, defaultColor: string) {
   // Use the provided color or the default color if it's not provided.

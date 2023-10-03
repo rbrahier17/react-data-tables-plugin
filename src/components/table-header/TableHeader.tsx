@@ -1,8 +1,30 @@
-import "./TableHeader.css";
-import { ITableHeaderProps } from "../../types/data-table";
+/**
+ * TableHeader.tsx
+ */
 
+// Import styles
+import "./TableHeader.css";
+
+// Import interfaces
+import { ITableHeaderProps } from "../../interfaces/data-table-interfaces";
+
+/**
+ * Component for rendering the table header, including column headers with sorting functionality.
+ *
+ * @param columns - The configuration of table columns.
+ * @param sorting - The current sorting criteria (column data and order "asc" or "desc").
+ * @param onSortingChange - A callback function to handle changes in sorting criteria.
+ * @returns The TableHeader component.
+ */
 export default function TableHeader({ columns, sorting, onSortingChange }: ITableHeaderProps) {
+  /**
+   * Callback function to handle column header click events for sorting.
+   * It toggles the sorting order and calls the onSortingChange callback.
+   *
+   * @param column - The column data identifier.
+   */
   const handleColumnClick = (column: string) => {
+    // Toggle the sorting order for the clicked column
     onSortingChange({
       column,
       order: sorting.column === column ? (sorting.order === "asc" ? "desc" : "asc") : "asc",
@@ -21,6 +43,7 @@ export default function TableHeader({ columns, sorting, onSortingChange }: ITabl
                 onClick={() => handleColumnClick(column.data)}
               >
                 {column.title}
+                {/* Display sorting arrows based on sorting criteria */}
                 <div className='arrow-container'>
                   <span
                     className={`arrow-up ${sorting.column === column.data && sorting.order === "asc" ? "active" : ""}`}

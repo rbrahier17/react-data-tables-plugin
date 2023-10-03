@@ -9,7 +9,7 @@
 - Control the number of entries per page.
 - Implement search and filtering capabilities.
 - Display pagination for easy navigation through large data sets.
-- Choose from different themes to match your application's style.
+- Color scheme customization to match your application's style.
 
 ## Installation
 
@@ -17,3 +17,61 @@ You can install the `React-Data-Tables-Plugin` via npm:
 
 ```bash
 npm install react-data-tables-plugin
+```
+
+## Usage
+
+To use `React-Data-Tables-Plugin`, you need to import it into your React application and pass the necessary data and configuration as props. Here's a very basic example of how to use the plugin:
+
+```jsx
+import React from "react";
+import DataTable from "react-data-tables-plugin";
+
+const columns = [
+  {
+    title: "First Name",
+    data: "firstName",
+  },
+  {
+    title: "Last Name",
+    data: "lastName",
+  },
+  {
+    title: "Age",
+    data: "age",
+  },
+];
+
+const data = [
+  {
+    firstName: "John",
+    lastName: "Doe",
+    age: "30",
+  },
+  {
+    firstName: "Jane",
+    lastName: "Smith",
+    age: "25",
+  },
+];
+
+function App() {
+  return (
+    <div>
+      <DataTable columns={columns} data={data} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+![Result of this basic example](./public/screenshot-basic.png)
+
+## Configuration
+
+You can customize the behavior and appearance of the data table by passing configuration options as props to the `DataTable` component. Here are some common configuration options:
+
+- `columns`: An array of column definitions, specifying the title and data field for each column.
+- `data`: An array of data rows to be displayed in the table.
+- `mainColor` and `accentColor`: Custom colors for styling (optional).

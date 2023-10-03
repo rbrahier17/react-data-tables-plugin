@@ -1,3 +1,7 @@
+/**
+ * TableHeader.test.tsx
+ */
+
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { DataTable } from "../../data-table/DataTable";

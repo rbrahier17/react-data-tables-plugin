@@ -34,9 +34,10 @@ export const sampleData = [
   },
   {
     firstName: "Alice",
-    lastName: "Johnson",
+    lastName:
+      "Johnson Very very very long lastName enormous lastName wow too long Johnson Very very very long lastName enormous lastName wow too long",
     dateOfBirth: "11/30/1990",
-    street: "789 Oak Avenue",
+    street: "Johnson Very very very long lastName enormous lastName wow too long Johnson Very very very long lastName enormous lastName wow too long",
     city: "Chicago",
     zipCode: "60601",
   },
