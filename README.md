@@ -66,7 +66,7 @@ function App() {
 export default App;
 ```
 
-![Result of this basic example](./public/screenshot-basic.png)
+![Result of this basic example](./screenshots/basic-example.png)
 
 ## Configuration
 

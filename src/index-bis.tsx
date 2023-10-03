@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { DataTable } from "./data-table/DataTable";
-import { sampleColumns, sampleData } from "./data-samples";
 
 const columns = [
   {
@@ -36,7 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <div style={{ width: "96vw", margin: "0 auto" }}>
-      <DataTable columns={sampleColumns} data={sampleData} />
+      <DataTable columns={columns} data={data} />
     </div>
   </React.StrictMode>
 );

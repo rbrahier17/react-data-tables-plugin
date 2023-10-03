@@ -25,7 +25,7 @@ describe("TableBody tests suite", () => {
     }
   });
 
-  test("In no data is provided a specific element is displayed", () => {
+  test("If no data is provided a specific element is displayed", () => {
     render(<DataTable columns={sampleColumns} />);
     const noDataElement = screen.getByTestId("table-body-no-data");
     expect(noDataElement).toBeInTheDocument();
