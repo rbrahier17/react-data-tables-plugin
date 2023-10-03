@@ -70,8 +70,13 @@ export default App;
 
 ## Configuration
 
-You can customize the behavior and appearance of the data table by passing configuration options as props to the `DataTable` component. Here are some common configuration options:
+### Properties
 
 - `columns`: An array of column definitions, specifying the title and data field for each column.
 - `data`: An array of data rows to be displayed in the table.
 - `mainColor` and `accentColor`: Custom colors for styling (optional).
+
+### Data Types
+
+IMPORTANT: The data provided to the `React-Data-Tables-Plugin` should be of type "string". 
+
