@@ -66,7 +66,7 @@ function App() {
 export default App;
 ```
 
-![Result of this basic example](./screenshots/basic-example.png)
+![Screenshot of this basic example](./dist/screenshots/basic-example.png)
 
 ## Configuration
 
@@ -79,4 +79,3 @@ export default App;
 ### Data Types
 
 IMPORTANT: The data provided to the `React-Data-Tables-Plugin` should be of type "string". 
-
