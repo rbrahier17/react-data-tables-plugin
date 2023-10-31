@@ -2,6 +2,8 @@
 
 Note: This project was developed as part of the JS/React Application Developer training program at OpenClassrooms. It is a partial adaptation of the jQuery DataTables plugin (https://datatables.net/).
 
+## Introduction
+
 `react-data-tables-plugin` is a React component for displaying data in tabular format. It provides various features to manage and customize the presentation of your data. This plugin is designed to simplify the process of integrating data tables into your React applications.
 
 ## Features
@@ -81,3 +83,8 @@ export default App;
 | className | string | false | Custom class name for styling (optional). |
 | mainColor | string | false | The main color for custom styling (optional). |
 | accentColor | string | false | The accent color for custom styling (optional). |
+
+
+## Reporting Issues
+
+Please note that this project is part of a training program and long-term maintenance cannot be guaranteed but if you come across any issues or have suggestions for improvements, please don't hesitate to open an issue on our [GitHub Issues](https://github.com/rbrahier17/react-data-tables-plugin/issues) page. 
