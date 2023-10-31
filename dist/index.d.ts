@@ -10,6 +10,7 @@ interface IRow {
 interface IDataTableProps {
     data?: IRow[];
     columns: IColumn[];
+    className?: string;
     mainColor?: string;
     accentColor?: string;
 }
@@ -27,6 +28,6 @@ interface IDataTableProps {
  * @param props.accentColor - The accent color for custom styling (optional).
  * @returns - The DataTable component.
  */
-declare const DataTable: ({ data, columns, mainColor, accentColor }: IDataTableProps) => react_jsx_runtime.JSX.Element;
+declare const DataTable: ({ data, columns, className, mainColor, accentColor }: IDataTableProps) => react_jsx_runtime.JSX.Element;
 
 export { DataTable };

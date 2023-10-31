@@ -20,6 +20,8 @@
   padding: 1px 10px;
   font-weight: 500;
   font-size: 0.75rem;
+  background-color: white;
+  color: #0f172a;
 }
 
 #TablePagination button.active {

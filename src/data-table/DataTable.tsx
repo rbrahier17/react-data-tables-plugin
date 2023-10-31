@@ -9,7 +9,7 @@ import "./DataTable.css";
 import { IRow, ISorting, IDataTableProps } from "../interfaces/data-table-interfaces";
 
 // Import hooks and utils
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { setCustomColorProperty } from "../utils/setCustomColorProperty";
 import { sortData } from "../utils/dataSorting";
 
@@ -38,7 +38,7 @@ const DEFAULT_ACCENT_COLOR = "#5fc9f3";
  * @param props.accentColor - The accent color for custom styling (optional).
  * @returns - The DataTable component.
  */
-export const DataTable = ({ data = [], columns, mainColor, accentColor }: IDataTableProps) => {
+export const DataTable = ({ data = [], columns, className, mainColor, accentColor }: IDataTableProps) => {
   // This state contains the table data and can be manipulated (sorted, filtered, etc.).
   // This state allow the original data integrity to be preserved.
   const [dataState, setDataState] = useState(data);
@@ -52,9 +52,13 @@ export const DataTable = ({ data = [], columns, mainColor, accentColor }: IDataT
   // This state is used to manage table pagination, with the first page displayed by default.
   const [page, setPage] = useState(1);
 
-  // Set custom color properties for the component, using values from props if provided, or default colors if not.
-  setCustomColorProperty("--main-color", mainColor, DEFAULT_MAIN_COLOR);
-  setCustomColorProperty("--accent-color", accentColor, DEFAULT_ACCENT_COLOR);
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      // Set custom color properties for the component, using values from props if provided, or default colors if not.
+      setCustomColorProperty("--main-color", mainColor, DEFAULT_MAIN_COLOR);
+      setCustomColorProperty("--accent-color", accentColor, DEFAULT_ACCENT_COLOR);
+    }
+  }, [mainColor, accentColor]);
 
   // This handler updates the number of displayed entries and resets the page to 1 when the number of entries changes.
   const handleNumberOfEntriesChange = (newNumberOfEntries: number) => {
@@ -88,7 +92,7 @@ export const DataTable = ({ data = [], columns, mainColor, accentColor }: IDataT
   );
 
   return (
-    <div className='DataTable_global_wrapper'>
+    <div className={`DataTable_global_wrapper ${className}`}>
       <div className='DataTable_small_screen_unsupported'>
         Oops, this table is not small-screen friendly. Please switch to a larger device for the best experience.
       </div>

@@ -15,6 +15,7 @@ export interface ISorting {
 export interface IDataTableProps {
   data?: IRow[];
   columns: IColumn[];
+  className?: string;
   mainColor?: string;
   accentColor?: string;
 }
