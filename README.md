@@ -87,4 +87,4 @@ export default App;
 
 ## Reporting Issues
 
-Please note that this project is part of a training program and long-term maintenance cannot be guaranteed but if you come across any issues or have suggestions for improvements, please don't hesitate to open an issue on our [GitHub Issues](https://github.com/rbrahier17/react-data-tables-plugin/issues) page. 
+Please note that this project is part of a training program and maintenance cannot be guaranteed but if you come across any issues or have suggestions for improvements, please don't hesitate to open an issue on the [GitHub Issues](https://github.com/rbrahier17/react-data-tables-plugin/issues) page. 
