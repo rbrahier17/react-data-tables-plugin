@@ -51,13 +51,13 @@ const data = [
     firstName: "John",
     lastName: "Doe",
     age: "30",
-    id: "id-1",
+    id: "my-id-1",
   },
   {
     firstName: "Jane",
     lastName: "Smith",
     age: "25",
-    id: "id-2",
+    id: "my-id-2",
   },
 ];
 // Note: Ensure that each data object has an 'id' property with a unique string identifier.
