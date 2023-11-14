@@ -7,15 +7,16 @@ import "./TableEntriesSelector.css";
 
 // Import interfaces
 import { ITableEntriesSelectorProps } from "../../interfaces/data-table-interfaces";
+import React from "react";
 
 /**
- * Component for rendering a dropdown to select the number of entries to display per page in the table.
+ * Memoized component for rendering a dropdown to select the number of entries to display per page in the table.
  *
  * @param numberOfEntries - The number of entries to be displayed per page.
  * @param onEntriesChange - A callback function to handle changes in the number of entries.
  * @returns The TableEntriesSelector component.
  */
-export default function TableEntriesSelector({ numberOfEntries, onEntriesChange }: ITableEntriesSelectorProps) {
+const TableEntriesSelector = React.memo(({ numberOfEntries, onEntriesChange }: ITableEntriesSelectorProps) => {
   const options = [5, 10, 15, 20, 25, 50, 100];
 
   return (
@@ -35,4 +36,6 @@ export default function TableEntriesSelector({ numberOfEntries, onEntriesChange 
       <label htmlFor='entries'>entries</label>
     </div>
   );
-}
+});
+
+export default TableEntriesSelector;

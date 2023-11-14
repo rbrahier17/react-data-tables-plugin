@@ -1,6 +1,6 @@
 {
   "name": "react-data-tables-plugin",
-  "version": "0.1.42",
+  "version": "0.1.47",
   "private": false,
   "homepage": ".",
   "main": "dist/index.js",

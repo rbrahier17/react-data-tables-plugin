@@ -7,16 +7,17 @@ import "./TableHeader.css";
 
 // Import interfaces
 import { ITableHeaderProps } from "../../interfaces/data-table-interfaces";
+import React from "react";
 
 /**
- * Component for rendering the table header, including column headers with sorting functionality.
+ * Memoized component for rendering the table header, including column headers with sorting functionality.
  *
  * @param columns - The configuration of table columns.
  * @param sorting - The current sorting criteria (column data and order "asc" or "desc").
  * @param onSortingChange - A callback function to handle changes in sorting criteria.
  * @returns The TableHeader component.
  */
-export default function TableHeader({ columns, sorting, onSortingChange }: ITableHeaderProps) {
+const TableHeader = React.memo(({ columns, sorting, onSortingChange }: ITableHeaderProps) => {
   /**
    * Callback function to handle column header click events for sorting.
    * It toggles the sorting order and calls the onSortingChange callback.
@@ -61,4 +62,6 @@ export default function TableHeader({ columns, sorting, onSortingChange }: ITabl
       </tr>
     </thead>
   );
-}
+});
+
+export default TableHeader;

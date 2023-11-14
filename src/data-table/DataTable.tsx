@@ -9,7 +9,7 @@ import "./DataTable.css";
 import { IRow, ISorting, IDataTableProps } from "../interfaces/data-table-interfaces";
 
 // Import hooks and utils
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { setCustomColorProperty } from "../utils/setCustomColorProperty";
 import { sortData } from "../utils/dataSorting";
 
@@ -42,6 +42,15 @@ export const DataTable = ({ data = [], columns, className, mainColor, accentColo
   // This state contains the table data and can be manipulated (sorted, filtered, etc.).
   // This state allow the original data integrity to be preserved.
   const [dataState, setDataState] = useState(data);
+
+  const [originalDataLength, setOriginalDataLength] = useState(data.length);
+
+  // Update dataState and originalDataLength if data changes
+  useEffect(() => {
+    setDataState(data);
+    setOriginalDataLength(data.length);
+  }, [data]);
+
   // This state is used to perform sorting (ascending or descending) of table entries.
   const [sorting, setSorting] = useState<ISorting>({
     column: columns[0].data,
@@ -60,17 +69,17 @@ export const DataTable = ({ data = [], columns, className, mainColor, accentColo
     }
   }, [mainColor, accentColor]);
 
-  // This handler updates the number of displayed entries and resets the page to 1 when the number of entries changes.
-  const handleNumberOfEntriesChange = (newNumberOfEntries: number) => {
+  // This memoized handler updates the number of displayed entries and resets the page to 1 when the number of entries changes.
+  const handleNumberOfEntriesChange = useCallback((newNumberOfEntries: number) => {
     setNumberOfEntries(newNumberOfEntries);
     setPage(1);
-  };
+  }, []);
 
-  // This handler updates the sorting criteria and resets the page to 1 when the sorting changes.
-  const handleSortingChange = (newSorting: ISorting) => {
+  // This memoized handler updates the sorting criteria and resets the page to 1 when the sorting changes.
+  const handleSortingChange = useCallback((newSorting: ISorting) => {
     setSorting(newSorting);
     setPage(1);
-  };
+  }, []);
 
   // This handler updates the data state based on the search input and resets the page to 1 when the data state changes.
   const handleSearchInput = (newDataState: IRow[]) => {
@@ -108,7 +117,7 @@ export const DataTable = ({ data = [], columns, className, mainColor, accentColo
       </div>
       <div className='DataTable_bottom'>
         <TableInfo
-          dataLength={data.length}
+          dataLength={originalDataLength}
           dataStateLength={dataState.length}
           displayedDataStart={displayedDataStart}
           displayedDataEnd={displayedDataEnd}
