@@ -60,7 +60,7 @@ const data = [
     id: "id-2",
   },
 ];
-// Note: Ensure that each data object has a unique 'id' property, serving as a * string identifier. 
+// Note: Ensure that each data object has an 'id' property with a unique string identifier.
 // Refer to the "Performance" section for more details.
 
 function App() {
