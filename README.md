@@ -92,11 +92,11 @@ export default App;
 
 ## Performance
 
-This plugin incorporates performance optimizations to enhance efficiency:
+This plugin incorporates performance optimizations:
 
-- Components are wrapped with `React.memo` to prevent unnecessary re-renders. `React.memo` is a higher-order component that memoizes the rendered output of a component, preventing re-renders if the input props remain unchanged.
+- Components are wrapped with [`React.memo`](https://react.dev/reference/react/memo) to prevent unnecessary re-renders. [`React.memo`](https://react.dev/reference/react/memo) is a higher-order component that memoizes the rendered output of a component, preventing re-renders if the input props remain unchanged.
 
-- It is very important for optimal performance that objects passed as props to construct the table body include a unique 'id' property. This uniqueness enables the avoidance of unnecessary re-renders. The 'id' property is utilized as the 'key' for each object displayed in the table. To generate unique identifiers, easily consider using libraries such as [uuid](https://www.npmjs.com/package/uuid).
+- It is very important for optimal performance that objects passed as props to construct the table body include a unique 'id' property. This uniqueness enables the avoidance of unnecessary re-renders. The 'id' property is utilized as the 'key' for each object displayed in the table. To generate unique identifiers, consider using libraries such as [uuid](https://www.npmjs.com/package/uuid).
 
 ## Reporting Issues
 
