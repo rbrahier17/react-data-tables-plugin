@@ -93,13 +93,15 @@ export default function TablePagination({
   return (
     <div id='TablePagination' data-testid='table-pagination'>
       {/* Previous button */}
-      <button
-        className='TablePagination_button'
-        onClick={() => handlePageChange(currentPage - 1)}
-        disabled={!canNavigatePrevious}
-      >
-        Previous
-      </button>
+      {totalPages > 1 && (
+        <button
+          className='TablePagination_button'
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={!canNavigatePrevious}
+        >
+          Previous
+        </button>
+      )}
 
       {/* Pagination buttons */}
       {getPagination().map((page, index) => (
@@ -113,13 +115,15 @@ export default function TablePagination({
       ))}
 
       {/* Next button */}
-      <button
-        className='TablePagination_button'
-        onClick={() => handlePageChange(currentPage + 1)}
-        disabled={!canNavigateNext}
-      >
-        Next
-      </button>
+      {totalPages > 1 && (
+        <button
+          className='TablePagination_button'
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={!canNavigateNext}
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 }
