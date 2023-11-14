@@ -51,13 +51,19 @@ const data = [
     firstName: "John",
     lastName: "Doe",
     age: "30",
+    id: "id-1",
   },
   {
     firstName: "Jane",
     lastName: "Smith",
     age: "25",
+    id: "id-2",
   },
 ];
+
+/**
+ * Note:  Ensure that each data object has a unique 'id' property, serving as a * string identifier. Refer to the "Performance" section for more details.
+ */
 
 function App() {
   return (
@@ -84,7 +90,14 @@ export default App;
 | mainColor | string | false | The main color for custom styling (optional). |
 | accentColor | string | false | The accent color for custom styling (optional). |
 
+## Performance
+
+This plugin incorporates performance optimizations to enhance efficiency:
+
+- Components are wrapped with `React.memo` to prevent unnecessary re-renders. `React.memo` is a higher-order component that memoizes the rendered output of a component, preventing re-renders if the input props remain unchanged.
+
+- It is very important for optimal performance that objects passed as props to construct the table body include a unique 'id' property. This uniqueness enables the avoidance of unnecessary re-renders. The 'id' property is utilized as the 'key' for each object displayed in the table. To generate unique identifiers, easily consider using libraries such as [uuid](https://www.npmjs.com/package/uuid).
 
 ## Reporting Issues
 
-Please note that this project is part of a training program and maintenance cannot be guaranteed but if you come across any issues or have suggestions for improvements, please don't hesitate to open an issue on the [GitHub Issues](https://github.com/rbrahier17/react-data-tables-plugin/issues) page. 
+Please note that this project is part of a training program and maintenance cannot be guaranteed but if you come across any issues or have suggestions for improvements, please don't hesitate to open an issue on the [GitHub Issues](https://github.com/rbrahier17/react-data-tables-plugin/issues) page.
